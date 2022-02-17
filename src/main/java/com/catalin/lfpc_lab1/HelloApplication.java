@@ -29,6 +29,7 @@ class LFPC {
     static String vs[] = new String[100];
     static String s1, s2, s3 = " ";
     static int vertices_length = 0, term_length = 0,n=1 , nOfEndPoints = 0 , nOfPoints = 0 , max=1;
+    static String vertq[] = new String[100];
 
     static int find(char temp) {
         if (isUpperCase(temp)) {
@@ -61,6 +62,7 @@ class LFPC {
             if (isUpperCase(s1.charAt(i))) {
                 vertices_length++;
                 vertices[vertices_length] = s1.charAt(i);
+                vertq[vertices_length] = "q" + (vertices_length-1);
 
             }
         }
@@ -104,10 +106,10 @@ class LFPC {
         System.out.print("  ");
         String spatii="";
         for(int i=1;i<=2*max;i++)spatii=spatii+" ";
-        for (int i = 1; i <= vertices_length; i++) System.out.print(vertices[i] + spatii);
+        for (int i = 1; i <= vertices_length; i++) System.out.print(vertq[i] + spatii);
         System.out.println();
         for (int i = 1; i <= vertices_length; i++) {
-            System.out.print(vertices[i] + " | ");
+            System.out.print(vertq[i] + " | ");
             for (int j = 1; j <= vertices_length; j++) {
                 System.out.print(graphv[i][j] + " | ");
                 nOfPoints++;
@@ -141,7 +143,7 @@ public class HelloApplication extends Application {
 
 
             for(int i=0;i<LFPC.vertices_length;i++){
-                String tempS = ""+LFPC.vertices[i+1];
+                String tempS = LFPC.vertq[i+1];
                 roundButton[i] = new Button(tempS);
                 Image img = new Image("D:/Work/UTM/Intelij/LFPC_lab1/src/main/java/com/catalin/lfpc_lab1/Resources/cerc.png");
                 ImageView view = new ImageView(img);
@@ -165,7 +167,8 @@ public class HelloApplication extends Application {
                             "-fx-min-width: 30px; " +
                             "-fx-min-height: 30px; " +
                             "-fx-max-width: 30px; " +
-                            "-fx-max-height: 30px;"
+                            "-fx-max-height: 30px;" +
+                            "-fx-font-size:10"
             );
 
             roundButton[i].setLayoutX(100+i*100);
