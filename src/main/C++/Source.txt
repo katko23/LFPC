@@ -1,0 +1,10 @@
+{
+ Func  Int  nume23 ( Int v222; ){
+ Double var22 
+ var22 =  224
+ Bool b = False
+       b = True  
+ nume23( 55 )
+ var22 +=24
+ } 
+}
