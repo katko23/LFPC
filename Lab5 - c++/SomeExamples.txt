@@ -1,0 +1,42 @@
+S -> dB
+S -> AB
+A -> d
+A -> dS
+A -> aAaAb
+A -> empty
+B -> a
+B -> aS
+B -> A
+D -> Aba
+B -> EE
+E -> ABE
+D -> BAE
+E -> DBA
+
+
+S -> dB
+S -> A
+A -> d
+A -> dS
+A -> aBdB
+B -> a
+B -> aS
+B -> AC
+D -> AB
+C -> bC
+C -> empty
+
+S -> aC
+A -> b
+A -> BA
+B -> A
+C -> a
+C -> BA
+
+S -> A
+A -> C
+A -> AcC
+C -> a
+C -> b
+C -> dD
+D -> Ae
